@@ -8,4 +8,4 @@ Class: ECE 309-001
 Date: 3 September 2018
 
 ### Revision History ###
-* **Hw 2:** Duplicated repsoitory, edited Readme File
+* **Hw 2:** Duplicated repsoitory, edited Readme File, Linked Travis CI, Ran tests successfully, 
