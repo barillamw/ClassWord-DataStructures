@@ -95,7 +95,7 @@ bool List::empty() {
 void List::push_back(char * string) {
 	//Add a string to the tail of a list
 	Item *newItem = new Item(string);
-	append(newItem);
+	append(*newItem);
 }
 
 Item List::get(int n){
