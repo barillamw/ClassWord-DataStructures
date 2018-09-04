@@ -126,13 +126,13 @@ int List::length(){
 Item List::remove_front(){
 	//Remove the head of the list and return a copy of the data that was removed.
 	Item copy(NULL);
-	remove(*copy);
+	remove(copy);
 	return copy;
 }
 
 List::~List() {
 	// Free all of the ListNodes in the listItem t;
 	while(!empty()) {//while not empty
-		remove(t); //remove the next node
+		remove(); //remove the next node
 	}
 }
