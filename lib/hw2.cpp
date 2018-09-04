@@ -92,7 +92,7 @@ bool List::empty() {
   return head==NULL;
 }
 
-void List::push_back(char * string) {
+/*void List::push_back(char * string) {
 	//Add a string to the tail of a list
 	Item new (string);
 	append(new);
@@ -136,4 +136,4 @@ List::~List() {
 		remove(t); //remove the next node
 		t++;
 	}
-}
+}*/
