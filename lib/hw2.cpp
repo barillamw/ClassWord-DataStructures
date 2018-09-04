@@ -132,7 +132,8 @@ Item List::remove_front(){
 
 List::~List() {
 	// Free all of the ListNodes in the listItem t;
+	Item t = new Item(NULL);
 	while(!empty()) {//while not empty
-		remove(); //remove the next node
+		remove(t); //remove the next node
 	}
 }
