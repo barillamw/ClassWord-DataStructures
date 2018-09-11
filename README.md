@@ -11,5 +11,5 @@ Date: 3 September 2018
 * **Hw 2:** Duplicated repsoitory, edited Readme File, Linked Travis CI, Ran tests successfully, created hw2.cpp to meet specs, Passed test as expected.
 
 ### Travis-CI Status ###
-[![Build Status](https://travis-ci.com/barillamw/ece309-fall18-mbarill.svg?branch=master)](https://travis-ci.com/barillamw/ece309-fall18-mbarill)
+[![Build Status](https://travis-ci.com/barillamw/ece309-fall18-mbarill.svg?token=XXAf3b3A3RCYjVpUP97T&branch=master)](https://travis-ci.com/barillamw/ece309-fall18-mbarill)
 
