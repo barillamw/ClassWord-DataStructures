@@ -57,9 +57,12 @@ Item Array::get(int n){
 }
 void Array::push_back(char* string){
 	int i = 0;
-	Item * newArray = new Item[arraySize+1];
+	Item * newArray;
+
+
 
 	if(get(arraySize-1) != ""){
+		newArray = new Item[arraySize+1];
 		for(i=0; i<arraySize; i++){
 			arr[i] = newArray[i];
 			arraySize = length();
@@ -75,7 +78,6 @@ void Array::push_back(char* string){
 		}
 
 		arr[i] = string;
-		delete newArray[];
 	}
 
 
