@@ -69,13 +69,13 @@ void Array::push_back(char* string){
 	}
 	else{
 		for(i=0; i<arraySize; i++){
-			if(arr[i]==""){
+			if(get(i)==""){
 				break;
 			}
 		}
 
 		arr[i] = string;
-		delete newArray;
+		delete newArray[];
 	}
 
 
