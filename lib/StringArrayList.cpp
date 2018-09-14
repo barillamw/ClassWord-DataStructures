@@ -91,4 +91,5 @@ const char * Array::remove_front(){
 			return tmp;
 		}
 	}
+	return NULL;
 }
