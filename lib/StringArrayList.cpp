@@ -60,7 +60,7 @@ void Array::push_back(char* string){
 	const char ** newArray;
 
 
-	if(strcmp(get(arraySize-1,"") != 0){
+	if(strcmp(get(arraySize-1),"") != 0){
 		newArray = new const char *[arraySize+1];
 		for(i=0; i<arraySize; i++){
 			arr[i] = newArray[i];
@@ -78,8 +78,7 @@ void Array::push_back(char* string){
 
 		arr[i] = string;
 	}
-
-
+	return;
 }
 const char * Array::remove_front(){
 	int i=0;
