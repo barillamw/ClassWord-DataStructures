@@ -52,7 +52,7 @@ int Array::length(){
 
 	return count;
 }
-Item Array::get(int n){
+const char * Array::get(int n){
 	return arr[n];
 }
 void Array::push_back(char* string){
@@ -81,7 +81,7 @@ void Array::push_back(char* string){
 
 
 }
-Item Array::remove_front(){
+const char * Array::remove_front(){
 	int i=0;
 	const char * tmp = "";
 
