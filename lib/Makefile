@@ -1,6 +1,6 @@
 
 # add files you create here
-OBJ = example.o hw2.o
+OBJ = example.o hw2.o StringArrayList.o
 
 all: libece309.a
 
