@@ -39,7 +39,7 @@ Array::Array(int n) {
 Array ::~Array(){
 	delete arr; //frees the array
 }
-Array ::int Array::length(){
+int Array::length(){
 	int i = 0;
 	int count = 0;
 	Item empty = "";
@@ -52,10 +52,10 @@ Array ::int Array::length(){
 
 	return count;
 }
-Array::Item Array::get(int n){
+Item Array::get(int n){
 	return arr[n];
 }
-Array::void push_back(char* string){
+void Array::push_back(char* string){
 	int i = 0;
 	Item * newArray = new Item[arraySize+1];
 
@@ -80,7 +80,7 @@ Array::void push_back(char* string){
 
 
 }
-Array::Item remove_front(){
+Item Array::remove_front(){
 	int i=0;
 	Item tmp = "";
 
