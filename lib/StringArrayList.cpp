@@ -44,7 +44,7 @@ int Array::length(){
 	int count = 0;
 	Item empty = "";
 	for (i=0; i<arraySize; i++){
-		if((get(i) != empty)){
+		if((get(i) == !empty)){
 			count++;
 		}
 	}
