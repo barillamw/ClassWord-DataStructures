@@ -45,7 +45,7 @@ int Array::length(){
 	Item empty = "";
 
 	for (i=0; i<arraySize; i++){
-		if(get(i) != empty){
+		if(strcmp(get(i),empty) != 0){ //
 			count++;
 		}
 	}
@@ -60,8 +60,7 @@ void Array::push_back(char* string){
 	Item * newArray;
 
 
-
-	if(get(arraySize-1) != ""){
+	if(strcmp(getarraySize-1,"") != 0){
 		newArray = new Item[arraySize+1];
 		for(i=0; i<arraySize; i++){
 			arr[i] = newArray[i];
@@ -72,7 +71,7 @@ void Array::push_back(char* string){
 	}
 	else{
 		for(i=0; i<arraySize; i++){
-			if(get(i)==""){
+			if(strgmp(get(i),"") == 0){
 				break;
 			}
 		}
@@ -87,7 +86,7 @@ Item Array::remove_front(){
 	Item tmp = "";
 
 	for(i=0; i<arraySize; i++){
-		if(arr[i] != ""){
+		if(strcmp(arr[i],"") != 0){
 			tmp = arr[i];
 			arr[i] = "";
 			return tmp;
