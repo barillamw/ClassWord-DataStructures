@@ -21,7 +21,7 @@ class Array {
 		Item get(int n);
 		int length();
 		Item remove_front();
-				
+
 };
 
 Array::Array(int n) {
@@ -42,8 +42,9 @@ Array ::~Array(){
 int Array::length(){
 	int i = 0;
 	int count = 0;
+	Item empty = "";
 	for (i=0; i<arraySize; i++){
-		if((get(i) != "")){
+		if((get(i) != empty)){
 			count++;
 		}
 	}
