@@ -29,7 +29,7 @@ Array::Array(int n) {
   arraySize = n;
   arr = new const char *[arraySize];
   int i = 0;
-  const char * itemNll;
+  const char * itemNll = NULL;
 
   //initialize array a to NULL
   for (i=0;i<n;i++){
@@ -60,7 +60,7 @@ void Array::push_back(char* string){
 	const char ** newArray;
 
 
-	if(strcmp(getarraySize-1,"") != 0){
+	if(strcmp(get(arraySize-1,"") != 0){
 		newArray = new const char *[arraySize+1];
 		for(i=0; i<arraySize; i++){
 			arr[i] = newArray[i];
@@ -71,7 +71,7 @@ void Array::push_back(char* string){
 	}
 	else{
 		for(i=0; i<arraySize; i++){
-			if(strgmp(get(i),"") == 0){
+			if(strcmp(get(i),"") == 0){
 				break;
 			}
 		}
