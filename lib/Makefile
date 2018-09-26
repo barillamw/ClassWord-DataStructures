@@ -1,10 +1,6 @@
 
 # add files you create here
-<<<<<<< HEAD
-OBJ = lec04_hw.o
-=======
 OBJ = example.o hw2.o StringArrayList.o lec04_hw.o
->>>>>>> 6ff87dd704aa03430c0c78af99004cd7c4f28560
 
 all: libece309.a
 
