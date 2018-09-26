@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <poly.h>
+#include <pList.h>
 
 //declarations of the virtual functions
 StrItem::StrItem(const char *s) {str = s;}
