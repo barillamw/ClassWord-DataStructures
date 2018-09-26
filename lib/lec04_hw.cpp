@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "poly.h"
+#include <poly.h>
 
 
 StrItem::StrItem(const char *s) {str = s;}
@@ -9,16 +9,16 @@ void IntItem::print(){printf("Item: %d", num);}
 DblItem::DblItem(double d) {dbl = d;}
 void DblItem::print(){printf("Item: %f",dbl);}
 
-ListNode::ListNode(const Object& a, ListNode *n){
+ListNode::ListNode(Object* a, ListNode *n){
   item = a;
   next = n;
 }
 ListNode* ListNode::getNext(){return next;}
 void ListNode::setNext(ListNode *n){next = n;}
-Object& ListNode::getItem(){return item;}
+Object* ListNode::getItem(){return item;}
 
 iterator::iterator(ListNode* n) { node = n; }
-Object& iterator::getItem() { return node->getItem(); }
+Object* iterator::getItem() { return node->getItem(); }
 void iterator::increment() { node = node->next; }
 bool iterator::end() {  return node==NULL; }
 
@@ -31,7 +31,7 @@ pList::pList(){
   tail = NULL;
 }
 
-void pList::append(Object a){
+void pList::append(Object* a){
   ListNode *node = new ListNode(a);
   if (head == NULL)
     {
@@ -46,7 +46,7 @@ void pList::append(Object a){
     }
 }
 
-bool pList::remove(Object &copy){
+bool pList::remove(Object* copy){
   if (!empty()) // if list is not empty
     {
       copy = head->getItem(); // return copy
@@ -64,7 +64,7 @@ bool pList::empty(){
   return head==NULL;
 }
 
-void pList::insertAfter(iterator it, Object item){ // pseudocode in zyBook 2.3
+void pList::insertAfter(iterator it, Object* item){ // pseudocode in zyBook 2.3
     if (it.node==NULL)
       { // special case to insert at the head
 	// point new node at current head of list

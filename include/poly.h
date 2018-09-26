@@ -5,7 +5,7 @@
 
 class Object {
 public:
-  virtual void print();
+  virtual void print()=0;
 };
 
 class StrItem : public Object {
@@ -31,13 +31,13 @@ public:
 
 class ListNode {
   public:
-    Object item;// data in the list
-    ListNode *next;
+    Object* item;// data in the list
+    ListNode* next;
   public:
-    ListNode(const Object& a, ListNode *n=NULL);
+    ListNode(Object* a, ListNode *n=NULL);
     ListNode* getNext();
     void setNext(ListNode *n);
-    Object& getItem();
+    Object* getItem();
 
     friend class List;
   };
@@ -48,7 +48,7 @@ class ListNode {
 
   public:
     iterator(ListNode *n=NULL);
-    Object &getItem();
+    Object* getItem();
     void increment();
     bool end();
 
@@ -69,14 +69,14 @@ class pList {
 
   public:
     pList();
-    void append(Object a);
-    bool remove(Object &a);
+    void append(Object* a);
+    bool remove(Object* a);
     bool empty();
 
     iterator begin();
 
     void removeAfter(iterator it); // pseudocode in zyBook 2.4
-    void insertAfter(iterator it, Object item);
+    void insertAfter(iterator it, Object* item);
   };
 
 
