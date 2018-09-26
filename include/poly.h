@@ -5,7 +5,7 @@
 
 class Object {
 public:
-  virtual void print()=0;
+  virtual void print();
 };
 
 class StrItem : public Object {
