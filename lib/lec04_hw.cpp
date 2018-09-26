@@ -3,11 +3,11 @@
 
 
 StrItem::StrItem(const char *s) {str = s;}
-void StrItem::print(){printf("Item: %s", str);}
+void StrItem::print(){printf("Item: %s\n", str);}
 IntItem::IntItem(int n) {num = n;}
-void IntItem::print(){printf("Item: %d", num);}
+void IntItem::print(){printf("Item: %d\n", num);}
 DblItem::DblItem(double d) {dbl = d;}
-void DblItem::print(){printf("Item: %f",dbl);}
+void DblItem::print(){printf("Item: %f\n",dbl);}
 
 ListNode::ListNode(Object* a, ListNode *n){
   item = a;
