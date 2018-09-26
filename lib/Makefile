@@ -1,6 +1,6 @@
 
 # add files you create here
-OBJ = StringArrayList.o lec04_hw.o
+OBJ = StringArrayList.o pList.o
 
 all: libece309.a
 
