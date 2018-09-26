@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "poly.h"
 
+
 StrItem::StrItem(const char *s) {str = s;}
 void StrItem::print(){printf("Item: %s", str);}
 IntItem::IntItem(int n) {num = n;}
@@ -22,15 +23,15 @@ void iterator::increment() { node = node->next; }
 bool iterator::end() {  return node==NULL; }
 
 
-iterator List::begin() { return iterator(head); }
+iterator pList::begin() { return iterator(head); }
 
-List::List(){
+pList::pList(){
   // start with an empty list
   head = NULL;
   tail = NULL;
 }
 
-void List::append(Object a){
+void pList::append(Object a){
   ListNode *node = new ListNode(a);
   if (head == NULL)
     {
@@ -45,7 +46,7 @@ void List::append(Object a){
     }
 }
 
-bool List::remove(Object &copy){
+bool pList::remove(Object &copy){
   if (!empty()) // if list is not empty
     {
       copy = head->getItem(); // return copy
@@ -59,11 +60,11 @@ bool List::remove(Object &copy){
   return false; // nothing in list
 }
 
-bool List::empty(){
+bool pList::empty(){
   return head==NULL;
 }
 
-void List::insertAfter(iterator it, Object item){ // pseudocode in zyBook 2.3
+void pList::insertAfter(iterator it, Object item){ // pseudocode in zyBook 2.3
     if (it.node==NULL)
       { // special case to insert at the head
 	// point new node at current head of list
@@ -83,7 +84,7 @@ void List::insertAfter(iterator it, Object item){ // pseudocode in zyBook 2.3
       }
 }
 
-void List::removeAfter(iterator it){ // pseudocode in zyBook 2.4
+void pList::removeAfter(iterator it){ // pseudocode in zyBook 2.4
    if (it.node==NULL) // special case to remove head, it’s not after any node
      {
        ListNode *remove = head;               // will remove the head

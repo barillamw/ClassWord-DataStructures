@@ -43,7 +43,7 @@ class ListNode {
   };
 
   class iterator {
-  private:
+  public:
     ListNode *node;
 
   public:
@@ -56,7 +56,7 @@ class ListNode {
   };
 
 
-class List {
+class pList {
   private:
     // ListNode represents each
     // node of the list
@@ -68,7 +68,7 @@ class List {
 
 
   public:
-    List();
+    pList();
     void append(Object a);
     bool remove(Object &a);
     bool empty();

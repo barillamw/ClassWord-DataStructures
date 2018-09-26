@@ -3,21 +3,14 @@
 
 int main()
 {
-  List l;
+  pList l;
 
   l.append(StrItem("milk"));
 
 
 
-  iterator it = l.begin();
-  while(!it.end())
-    {
-      Object& copy = it.getItem();
 
-      copy.print();
 
-      it.increment();
-    }
 
   return 0;
 }
