@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+//header file for the hw 4
 #ifndef poly_h
 #define poly_h
 
