@@ -1,6 +1,6 @@
 
 # list the name of each file (without the .cpp file at the end)
-EXE = example
+EXE = example hw4
 
 all: $(EXE)
 
@@ -14,4 +14,3 @@ clean:
 
 %-run:
 	@./$*
-
