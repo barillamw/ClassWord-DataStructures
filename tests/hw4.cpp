@@ -12,9 +12,16 @@ int main()
   Object *three = new DblItem(2.0);
   l.append(three);
 
-  one ->print();
-  two ->print();
-  three ->print();
+  iterator it = l.begin();
+  while(!it.end())
+    {
+      Object* copy = it.getItem();
+
+      copy ->print();
+
+      it.increment();
+    }
+
 
 
 
