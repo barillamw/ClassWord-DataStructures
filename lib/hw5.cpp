@@ -17,8 +17,8 @@ private:
 
 public:
   IntegerSetArray(int size);
-  bool Insert(int x);
-  bool search(int x);
+  bool insert(int x);
+  bool search(int x) const;
   void remove(int x);
 }
 
@@ -45,7 +45,7 @@ bool IntegerSetArray::Insert(int x){
   return false;
 }
 
-const bool IntegerSetArray::Search(int x) {
+bool IntegerSetArray::Search(int x) const {
   int i;
   for (i=0; i<size; i++){
     if(setArray[i] == x){
