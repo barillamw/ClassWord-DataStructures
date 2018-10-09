@@ -1,4 +1,5 @@
 #include <stdio.h>
+#define EMPTY -1011
 
 class IntegerSet {
 protected:
@@ -14,7 +15,7 @@ public:
 class IntegerSetArray: public IntegerSet {
 private:
   int* setArray;
-  int empty = -1011; // initalize all values to negative 1011 assuming that value will not be stored by the user
+  //int empty = -1011; // initalize all values to negative 1011 assuming that value will not be stored by the user
 
 public:
   IntegerSetArray(int size);
@@ -30,14 +31,14 @@ IntegerSetArray(int s){
   setArray = new int[s] ;
   size = s;
   for(i=0; i<size; i++){
-    array[i] = -empty;
+    array[i] = EMPTY;
   }
 }
 
 bool IntegerSetArray::insert(int x){
   int i;
   for (i=0; i<size;i++){
-    if(setArray[i] == empty ){
+    if(setArray[i] == EMPTY ){
       setArray[i] = x;
       return true;
     }
@@ -60,7 +61,7 @@ void IntegerSetArray::remove(int x){
 
   for (i=0; i<size; i++){
     if(setArray[i] == x){
-      setArray[i] = empty;
+      setArray[i] = EMPTY;
     }
   }
 }
