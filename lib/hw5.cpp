@@ -6,9 +6,9 @@ protected:
    int hash(int key) { return (key * 997) % size; }
 public:
    IntegerSet(int htsize):size(htsize) {}
-   virtual bool insert(int) = 0;
-   virtual bool search(int) const = 0;
-   virtual void remove(int) = 0;
+   virtual bool insert(int x) = 0;
+   virtual bool search(int x) const = 0;
+   virtual void remove(int x) = 0;
 };
 
 class IntegerSetArray: public IntegerSet {
