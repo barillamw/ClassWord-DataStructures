@@ -11,12 +11,12 @@ public:
    virtual void remove(int) = 0;
 };
 
-class IntergerSetArray: public IntergerSet {
+class IntegerSetArray: public IntegerSet {
 private:
   int* setArray;
 
 public:
-  IntergerSetArray(int size);
+  IntegerSetArray(int size);
   bool Insert(int x);
   bool search(int x);
   void remove(int x);
@@ -34,7 +34,7 @@ IntegerSetArray::IntegerSetArray(int s){
   }
 }
 
-bool IntergerSetArray::Insert(int x){
+bool IntegerSetArray::Insert(int x){
   int i;
   for (i=0; i<size;i++){
     if(setArray[i] == empty ){
