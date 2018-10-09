@@ -22,7 +22,7 @@ public:
   void remove(int x);
 }
 
-IntegerSetArray::IntegerSetArray(int s){
+IntegerSetArray(int s){
   int array[s];
   int i;
   int empty = -1011; // initalize all values to negative 1011 assuming that value will not be stored by the user
