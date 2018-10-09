@@ -45,7 +45,7 @@ bool IntegerSetArray::Insert(int x){
   return false;
 }
 
-bool IntegerSetArray::Search(int x) const{
+const bool IntegerSetArray::Search(int x) {
   int i;
   for (i=0; i<size; i++){
     if(setArray[i] == x){
