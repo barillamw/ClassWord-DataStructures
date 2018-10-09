@@ -14,6 +14,7 @@ public:
 class IntegerSetArray: public IntegerSet {
 private:
   int* setArray;
+  int empty = -1011; // initalize all values to negative 1011 assuming that value will not be stored by the user
 
 public:
   IntegerSetArray(int size);
@@ -23,18 +24,17 @@ public:
 }
 
 IntegerSetArray(int s){
-  int array[s];
   int i;
-  int empty = -1011; // initalize all values to negative 1011 assuming that value will not be stored by the user
 
-  setArray = *array;
+
+  setArray = new int[s] ;
   size = s;
   for(i=0; i<size; i++){
     array[i] = -empty;
   }
 }
 
-bool IntegerSetArray::Insert(int x){
+bool IntegerSetArray::insert(int x){
   int i;
   for (i=0; i<size;i++){
     if(setArray[i] == empty ){
@@ -45,7 +45,7 @@ bool IntegerSetArray::Insert(int x){
   return false;
 }
 
-bool IntegerSetArray::Search(int x) const {
+bool IntegerSetArray::search(int x) const {
   int i;
   for (i=0; i<size; i++){
     if(setArray[i] == x){
