@@ -14,7 +14,6 @@ public:
 
 class IntegerSetArray : public IntegerSet {
 private:
-  int size;
   int* setArray;
   //int empty = -1011; // initalize all values to negative 1011 assuming that value will not be stored by the user
 
@@ -28,10 +27,10 @@ public:
 IntegerSetArray::IntegerSetArray(int s){
   int i;
 
-  setArray = new int[s] ;
-  size = s;
+  IntegerSetArray.setArray = new int[s] ;
+  IntegerSetArray.size = s;
   for(i=0; i<size; i++){
-    setArray[i] = EMPTY;
+    IntegerSetArray.setArray[i] = EMPTY;
   }
 }
 
