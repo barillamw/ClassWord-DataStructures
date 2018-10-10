@@ -13,7 +13,7 @@ public:
 };
 
 class IntegerSetArray : public IntegerSet {
-private:
+private
   int* setArray;
   //int empty = -1011; // initalize all values to negative 1011 assuming that value will not be stored by the user
 
@@ -24,9 +24,8 @@ public:
   void remove(int x);
 }
 
-IntegerSetArray(int s){
+IntegerSetArray::IntegerSetArray(int s){
   int i;
-
 
   setArray = new int[s] ;
   size = s;
