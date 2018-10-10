@@ -12,13 +12,13 @@ public:
    virtual void remove(int x) = 0;
 };
 
-class IntegerSetArray: public IntegerSet {
+class IntegerSetArray : public IntegerSet {
 private:
   int* setArray;
   //int empty = -1011; // initalize all values to negative 1011 assuming that value will not be stored by the user
 
 public:
-  IntegerSetArray(int size);
+  IntegerSetArray(int s);
   bool insert(int x);
   bool search(int x) const;
   void remove(int x);
