@@ -1,6 +1,6 @@
 
 # add files you create here
-OBJ = StringArrayList.o pList.o hw5.o
+OBJ = IntegerSetArray.o
 
 all: libece309.a
 
