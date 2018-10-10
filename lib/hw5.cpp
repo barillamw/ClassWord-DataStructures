@@ -6,7 +6,6 @@ protected:
    int size;
    int hash(int key) { return (key * 997) % size; }
 public:
-   IntegerSet(int htsize):size(htsize) {}
    virtual bool insert(int x) = 0;
    virtual bool search(int x) const = 0;
    virtual void remove(int x) = 0;
@@ -18,19 +17,19 @@ private:
   //int empty = -1011; // initalize all values to negative 1011 assuming that value will not be stored by the user
 
 public:
-  IntegerSetArray(int s=0);
+  IntegerSetArray(int s);
   bool insert(int x);
   bool search(int x) const;
   void remove(int x);
-}
+};
 
 IntegerSetArray::IntegerSetArray(int s){
   int i;
 
-  IntegerSetArray.setArray = new int[s] ;
-  IntegerSetArray.size = s;
+  setArray = new int[s] ;
+  size = s;
   for(i=0; i<size; i++){
-    IntegerSetArray.setArray[i] = EMPTY;
+    setArray[i] = EMPTY;
   }
 }
 
