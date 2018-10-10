@@ -18,7 +18,7 @@ private:
   //int empty = -1011; // initalize all values to negative 1011 assuming that value will not be stored by the user
 
 public:
-  IntegerSetArray(int s);
+  IntegerSetArray(int s=0);
   bool insert(int x);
   bool search(int x) const;
   void remove(int x);
