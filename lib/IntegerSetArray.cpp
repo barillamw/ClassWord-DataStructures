@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "IntegerSetArray.h"
-#define EMPTY -1011
+#define EMPTY -1011 //random number that is used to signify empty space in array
 
 
 
