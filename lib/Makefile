@@ -1,6 +1,6 @@
 
 # add files you create here
-OBJ = IntegerSetArray.o
+OBJ = IntegerSetArray.o IntArray.o
 
 all: libece309.a
 
