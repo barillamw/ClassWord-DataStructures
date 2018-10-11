@@ -3,7 +3,7 @@
 #include "IntArray.h"
 
 IntArray::IntArray(const char* str){
-  int count;
+  int count = 0;
   int i;
   for (i=0;str[i]!='\0'; i++){
     count++;
