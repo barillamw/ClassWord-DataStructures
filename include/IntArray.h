@@ -5,7 +5,7 @@
 class IntArray  {
 private:
   int* array;
-  int size = 0;
+  int size;
 public:
   IntArray(const char* str);
   IntArray(int size, int val = 0);
