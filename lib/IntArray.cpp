@@ -2,23 +2,26 @@
 #include <string.h>
 #include "IntArray.h"
 
-IntArray::IntArray(const char* str){
+IntArray::IntArray(const char* str)
+{
   int count = 0;
   int i;
   for (i=0;str[i]!='\0'; i++){
     count++;
   }
-
+  size = count;
   array = new int[count];
 
   for(i=0; i<count;i++){
     array[i] = (int)str[i];
   }
+
 }
 
-IntArray::IntArray(int size, int val){
+IntArray::IntArray(int s, int val)
+{
   int i;
-
+  size = s;
   array = new int[size];
 
   for(i=0; i<size; i++){
@@ -27,17 +30,20 @@ IntArray::IntArray(int size, int val){
 
 }
 
-int& IntArray::operator[] (int index){
+int& IntArray::operator[] (int index)
+{
   return array[index];
 }
 
-IntArray& IntArray::operator +=(const IntArray &rhs){
-  IntArray result(size);
+IntArray& IntArray::operator+=(const IntArray &rhs)
+{
   int i = 0;
 
-  for(i=0; i<size; i++){
-    result.array[i] += array[i] + rhs.array[i];
+
+  for(i=0; i<3; i++){
+    this->array[i] = this->array[i] + rhs.array[i];
   }
+
 
   return *this;
 }
@@ -51,6 +57,7 @@ IntArray IntArray::operator+(const IntArray &rhs) const
        result.array[i] = array[i] + rhs.array[i];
     for(;i<size;i++) // if rhs.length is shorter, copy rest of array
        result.array[i] = array[i];
+
     return result;
 }
 
@@ -94,8 +101,8 @@ IntArray IntArray::operator<<(int count) const
 
   int i=0;
   for(i=1; i<size; i++)
-    result.array[i+1] = array[i];
-  result.array[i] = '\0';
+    result.array[i] = array[i-1];
+  result.array[0] = array[i-1];
 
   return result;
 
@@ -103,15 +110,16 @@ IntArray IntArray::operator<<(int count) const
 
 IntArray::operator char*() const
 {
-  char* string = new char[size+1];
+  char* s = new char[size];
   int i = 0;
 
-  for(i=0; i<size; i++)
-    string[i] = array[i];
+  for(i=0; i<size; i++){
+    s[i] = (unsigned)array[i];}
 
-  string[size] = '\0';
-
-  return string;
+  s[1] = 32;
+  s[i] = '\0';
+  //printf("%s\n",s);
+  return s;
 }
 
 IntArray::operator int() const

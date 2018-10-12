@@ -5,7 +5,7 @@
 class IntArray  {
 private:
   int* array;
-  int size;
+  int size = 0;
 public:
   IntArray(const char* str);
   IntArray(int size, int val = 0);
@@ -22,7 +22,8 @@ public:
       delete [] array;
     }
 
-  IntArray& operator=(const IntArray &rhs) {
+
+IntArray& operator=(const IntArray &rhs) {
        if(this == &rhs) return *this;
        printf("Running operator=!\n");
        delete [] array;
@@ -31,7 +32,7 @@ public:
       for(int i=0; i<size; i++)
          array[i] = rhs.array[i];
       return *this; // reference to this object
-     }
+    }
 
   void set(int index, int val) {
        array[index] = val;
