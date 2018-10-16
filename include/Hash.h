@@ -1,5 +1,5 @@
-#ifndef INTEGERSET_H
-#define INTEGERSET_H
+#ifndef HASH_H
+#define HASH_H
 
 #include "List.h"
 
@@ -39,4 +39,4 @@ public:
    virtual bool search(int) const override;
    virtual void remove(int) override;
 };
-#endif //INTEGERSET_H
+#endif //HASH_H
