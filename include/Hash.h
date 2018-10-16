@@ -9,6 +9,8 @@ protected:
    int size;
    int hash(int key) const { return (key * 997) % size; }
 public:
+  int collision;
+  int fails;
    IntegerSet(int htsize):size(htsize) {}
    virtual bool insert(int) = 0;
    virtual bool search(int) const = 0;
