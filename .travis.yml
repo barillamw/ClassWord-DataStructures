@@ -7,5 +7,10 @@ os:
 compiler:
   - clang
   - gcc
+  
+addons:
+  apt:
+    packages:
+      - libusb-1.0-0-dev
 
 script: make all && make run
