@@ -3,6 +3,9 @@
 #include <stdlib.h>
 #include <time.h>
 
+int collision = 0;
+int fails = 0;
+
 // can only hold positive integers
 IntegerSetHT::IntegerSetHT(int htsize)
 :IntegerSet(htsize)
@@ -17,22 +20,31 @@ IntegerSetHT::IntegerSetHT(int htsize)
 
 bool IntegerSetHT::insert(int data)
 {
+  //printf("insert started\n");
   int index = hash(data);
   int bucketsProbed = 0;
   while( bucketsProbed++ < probeDistance )
   {
+    //printf("bucketsProbed: %d     index: %d     data: %d\n", bucketsProbed,index, data);
    if ( table[index] < 0 )
    {
      // if the entry is not being used, put the
     // data there
+    //printf("success!\n");
      table[ index ] = data;
-     collision+=1;
+
      return true;
+   }
+   if ( bucketsProbed == 1){
+          //printf("collision\n");
+          collision++;
    }
    index = (index+1) % size;
   }
+
   // otherwise give up
-  fails+= 1;
+  //printf("fail\n");
+  fails++;
    return false;
 }
 
@@ -117,13 +129,28 @@ int main()
   int i;
   srand(time(NULL));
 
+  IntegerSetHT set2;
+  set2.insert(5);
+  set2.insert(99);
+  set2.insert(0);
+
+
   for (i=0; i<500; i++){
-    printf("%d\n",r);
     r = rand();
     set.insert(r);
   }
 
 
-  printf("Collisions: %d\nFails: %d\n",set.collision, set.fails);
+
+
+  printf("Collisions: %d\nFails: %d\n",collision, fails);
+
+  IntegerSetHT::iterator sit = set2.begin();
+while(!sit.end())
+{
+   printf("%d\n", sit.getInt());
+   sit.increment();
+}
+
   return 0;
 }
