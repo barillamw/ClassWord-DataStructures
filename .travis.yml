@@ -7,10 +7,14 @@ os:
 compiler:
   - clang
   - gcc
+  
 
+<<<<<<< HEAD
   addons:
   apt:
     packages:
       - libusb-1.0-0-dev
 
+=======
+>>>>>>> af34cb8697191ff6daa2d4926377ea3cc627045e
 script: make all && make run
