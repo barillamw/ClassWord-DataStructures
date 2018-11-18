@@ -14,7 +14,7 @@ private:
     int item;
     DListNode *next;
     DListNode *prev;
-    DListNode(Item i, DListNode *n = NULL, DListNode *p = NULL) {
+    DListNode(int i, DListNode *n = NULL, DListNode *p = NULL) {
       item = i;
       next = n;
       prev = p; // constructs the node for us
@@ -41,8 +41,8 @@ public:
 
 public:
   DList();
-  void append(Item a);
-  void insertAfter(iterator it, Item a);
+  void append(int a);
+  void insertAfter(iterator it, int a);
   void erase(iterator it);
   bool empty() { return head == NULL; }
 
