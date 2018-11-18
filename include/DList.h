@@ -3,7 +3,7 @@
 
 #include <stdlib.h>
 
-using Item = int;
+//using Item = int;
 
 class DList {
 private:
@@ -11,7 +11,7 @@ private:
   // node of the list
   class DListNode {
   public:
-    Item item;
+    int item;
     DListNode *next;
     DListNode *prev;
     DListNode(Item i, DListNode *n = NULL, DListNode *p = NULL) {
@@ -32,7 +32,7 @@ public:
 
   public:
     iterator(DListNode *n = NULL) { node = n; }
-    Item &getItem() { return node->item; }
+    int &getItem() { return node->item; }
     void increment() { node = node->next; }
     bool end() { return node == NULL; }
 
