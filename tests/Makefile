@@ -1,6 +1,6 @@
 
 # list the name of each file (without the .cpp file at the end)
-EXE = IntArray IntInf IntegerSetArray MaxHeap example hash hw4 pTest test
+EXE =  Graph IntArray IntInf IntegerSetArray MaxHeap hash hw4 pTest
 
 all: $(EXE)
 
