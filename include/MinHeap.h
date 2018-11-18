@@ -1,3 +1,6 @@
+#ifndef MINHEAP_H
+#define MINHEAP_H
+
 class MinHeap {
 private:
   int *heapArray;    // this is the minheap
@@ -40,3 +43,5 @@ private:
 public:
   static void sort(int *array, int size);
 };
+
+#endif MINHEAP_H
