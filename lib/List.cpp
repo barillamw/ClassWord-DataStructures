@@ -7,7 +7,7 @@ List::List()
   tail = NULL;
 }
 
-void List::append(Item a)
+void List::append(int a)
 {
   ListNode *node = new ListNode(a);
   if (head == NULL)
@@ -23,7 +23,7 @@ void List::append(Item a)
     }
 }
 
-bool List::remove(Item &copy)
+bool List::remove(int &copy)
 {
   if (!empty()) // if list is not empty
     {
@@ -43,7 +43,7 @@ bool List::empty()
   return head==NULL;
 }
 
-void List::insertAfter(List::iterator it, Item item) // pseudocode in zyBook 2.3
+void List::insertAfter(List::iterator it, int item) // pseudocode in zyBook 2.3
 {
     if (it.node==NULL)
       { // special case to insert at the head
