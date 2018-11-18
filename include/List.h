@@ -12,7 +12,7 @@ private:
 // node of the list
   class ListNode {
   public:
-    Int item; // data in the list
+    int item; // data in the list
     ListNode *next;
   public:
     ListNode(int a, ListNode *n=NULL)
