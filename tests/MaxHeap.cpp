@@ -116,3 +116,79 @@ void MaxHeap::sort(int *array, int size) {
 
   // return, and the array passed in is sorted
 }
+
+void MaxHeap::topthree(int &gold, int &silver, int &bronze) const{
+  if (nextIndex == 0) return;
+  else if(nextIndex == 1){
+    gold = heapArray[0];
+  }
+  else if(nextIndex == 2){
+    gold = heapArray[0];
+    silver = heapArray[1];
+  }
+  else{
+    gold = heapArray[0];
+    if(heapArray[1] > heapArray[2]){
+      if(heapArray[3] > heapArray[4]){
+        silver = heapArray[1];
+        bronze = heapArray[3];
+      }
+      else{
+        silver = heapArray[1];
+        bronze = heapArray[4];
+      }
+    }
+    else{
+      if(heapArray[5] > heapArray[6]){
+        silver = heapArray[2];
+        bronze = heapArray[5];
+      }
+      else{
+        silver = heapArray[2];
+        bronze = heapArray[6];
+      }
+    }
+  }
+  return;
+}
+
+int main() {
+
+  /*int *array = new int[10];
+  printf("Before: ");
+  for (int i = 0; i < 10; i++) {
+    array[i] = rand() % 100;
+    printf("%d ", array[i]);
+  }
+
+  //MaxHeap::sort(array, 10);
+
+  printf("\nAfter: ");
+  for (int i = 0; i < 10; i++) {
+    printf("%d ", array[i]);
+  }*/
+
+    MaxHeap heap;
+    int first;
+    int second;
+    int third;
+    heap.insert(45);
+    heap.print();
+    heap.insert(100);
+    heap.print();
+    heap.insert(5);
+    heap.insert(50);
+    heap.print();
+    heap.topthree(first, second, third);
+    printf("%d, %d, %d\n", first, second, third);
+    /*int ref;
+    heap.remove(ref);
+    heap.print();
+    for (int i = 0; i < 100; i++)
+      heap.insert(rand() % 1000);
+    for (int i = 0; i < 20; i++)
+      heap.remove(ref);
+    heap.print();*/
+
+  return 0;
+}

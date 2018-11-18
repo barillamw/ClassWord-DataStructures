@@ -1,6 +1,6 @@
 
 # add files you create here
-OBJ = List.o
+OBJ = IntINF.o
 
 all: libece309.a
 
