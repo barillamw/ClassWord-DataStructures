@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 
-
+using Item = int;
 
 class List {
 private:
@@ -12,10 +12,10 @@ private:
 // node of the list
   class ListNode {
   public:
-    int item; // data in the list
+    Item item; // data in the list
     ListNode *next;
   public:
-    ListNode(int a, ListNode *n=NULL)
+    ListNode(Item a, ListNode *n=NULL)
     {
       item = a;
       next=n; // automatically serves as a list tail
@@ -28,7 +28,7 @@ private:
     {
       next = n;
     }
-    int& getItem()
+    Item& getItem()
     {
       return item;
     }
@@ -46,7 +46,7 @@ public:
 
   public:
     iterator(ListNode *n=NULL) { node = n; }
-    int &getItem() { return node->getItem(); }
+    Item &getItem() { return node->getItem(); }
     void increment() { node = node->next; }
     bool end() {  return node==NULL; }
 
@@ -56,8 +56,8 @@ public:
 
 public:
   List();
-  void append(int a);
-  bool remove(int &a);
+  void append(Item a);
+  bool remove(Item &a);
   bool empty();
 
   iterator begin()
