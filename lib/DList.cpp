@@ -7,7 +7,7 @@ DList::DList() {
   tail = NULL;
 }
 
-void DList::append(int a) {
+void DList::append(Item a) {
   DListNode *node = new DListNode(a, NULL, tail);
   if (head == NULL) {
     // list is empty
@@ -19,7 +19,7 @@ void DList::append(int a) {
   }
 }
 
-void DList::insertAfter(DList::iterator it, int item) {
+void DList::insertAfter(DList::iterator it, Item item) {
   if (head == NULL || it.node == NULL) { // NULL iterator means insert at head
     DListNode *node = new DListNode(item, head); // next=head, prev=NULL
     if (head == NULL)                            // same as zyBook
