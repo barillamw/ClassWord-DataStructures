@@ -44,4 +44,4 @@ public:
   static void sort(int *array, int size);
 };
 
-#endif MINHEAP_H
+#endif //MINHEAP_H
