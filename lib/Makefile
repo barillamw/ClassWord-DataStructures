@@ -1,6 +1,6 @@
 
 # add files you create here
-OBJ = IntArray.o IntegerSetArray.o List.o MaxHeap.o ShortestPath.o StringArrayList.o hw2.o hw5.o lec04_hw.o pList.o DList.o Graph.o IntegerSet.o MaxHeap.o Queue.o MinHeap.o
+OBJ = IntArray.o IntegerSetArray.o List.o MaxHeap.o StringArrayList.o hw2.o hw5.o lec04_hw.o pList.o DList.o Graph.o IntegerSet.o MaxHeap.o Queue.o MinHeap.o
 
 all: libece309.a
 
