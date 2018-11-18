@@ -1,16 +1,17 @@
 
-# list the name of each file (without the .cpp file at the end)
-EXE =  Graph IntArray IntInf IntegerSetArray MaxHeap hash hw4 pTest
+# add files you create here
+OBJ = IntArray.o IntegerSetArray.o List.o MaxHeap.o ShortestPath.o StringArrayList.o hw2.o hw5.o lec04_hw.o pList.o DList.o Graph.o IntegerSet.o MaxHeap.o Queue.o MinHeap.o
 
-all: $(EXE)
+all: libece309.a
 
-run: all $(addsuffix -run,$(EXE))
+test: all
 
+# add files you want to remove here
 clean:
-	rm -f $(EXE) *~ logfile.txt $(ECE)
+	rm -f *~ libece309.a $(OBJ)
 
-%: %.cpp
-	$(CXX) -o $@ $< -Wall -Werror -I ../include -L ../lib -lece309
+libece309.a: $(OBJ)
+	$(AR) -r $@ $(OBJ)
 
-%-run:
-	@./$*
+%.o:%.cpp
+	$(CXX) -c -o $@ -I . -I ../include $< -Wall -Werror
