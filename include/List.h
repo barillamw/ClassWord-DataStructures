@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 
-using Item = int;
+
 
 class List {
 private:
@@ -12,10 +12,10 @@ private:
 // node of the list
   class ListNode {
   public:
-    Item item; // data in the list
+    Int item; // data in the list
     ListNode *next;
   public:
-    ListNode(Item a, ListNode *n=NULL)
+    ListNode(int a, ListNode *n=NULL)
     {
       item = a;
       next=n; // automatically serves as a list tail
@@ -28,7 +28,7 @@ private:
     {
       next = n;
     }
-    Item& getItem()
+    int& getItem()
     {
       return item;
     }
@@ -46,7 +46,7 @@ public:
 
   public:
     iterator(ListNode *n=NULL) { node = n; }
-    Item &getItem() { return node->getItem(); }
+    int &getItem() { return node->getItem(); }
     void increment() { node = node->next; }
     bool end() {  return node==NULL; }
 
@@ -56,8 +56,8 @@ public:
 
 public:
   List();
-  void append(Item a);
-  bool remove(Item &a);
+  void append(int a);
+  bool remove(int &a);
   bool empty();
 
   iterator begin()
@@ -66,7 +66,7 @@ public:
   }
 
   void removeAfter(iterator it); // pseudocode in zyBook 2.4
-  void insertAfter(iterator it, Item item);
+  void insertAfter(iterator it, int item);
 };
 
 #endif //LIST_H
