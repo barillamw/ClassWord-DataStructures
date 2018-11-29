@@ -3,14 +3,14 @@
 #include <stdlib.h>
 
 // can only hold positive integers
-IntegerSetHT::IntegerSetHT(int htsize) : IntegerSet(htsize) {
+ece309::IntegerSetHT::IntegerSetHT(int htsize) : IntegerSet(htsize) {
   probeDistance = 10;
   table = new int[size];
   for (int i = 0; i < size; i++)
     table[i] = empty_since_start; // -1 means empty
 }
 
-bool IntegerSetHT::insert(int data) {
+bool ece309::IntegerSetHT::insert(int data) {
   int index = hash(data);
   int bucketsProbed = 0;
   while (bucketsProbed++ < probeDistance) {
@@ -26,7 +26,7 @@ bool IntegerSetHT::insert(int data) {
   return false;
 }
 
-bool IntegerSetHT::search(int data) const {
+bool ece309::IntegerSetHT::search(int data) const {
   int index = hash(data);
   int bucketsProbed = 0;
   while (table[index] != empty_since_start && bucketsProbed++ < probeDistance) {
@@ -40,7 +40,7 @@ bool IntegerSetHT::search(int data) const {
   return false;
 }
 
-void IntegerSetHT::remove(int data) {
+void ece309::IntegerSetHT::remove(int data) {
   int index = hash(data);
   int bucketsProbed = 0;
   while (table[index] != empty_since_start && bucketsProbed++ < probeDistance) {
@@ -52,17 +52,17 @@ void IntegerSetHT::remove(int data) {
   }
 }
 
-IntegerSetHTChain::IntegerSetHTChain(int htsize) : IntegerSet(htsize) {
+ece309::IntegerSetHTChain::IntegerSetHTChain(int htsize) : IntegerSet(htsize) {
   table = new List[size];
 }
 
-bool IntegerSetHTChain::insert(int data) {
+bool ece309::IntegerSetHTChain::insert(int data) {
   List::iterator it;
   table[hash(data)].insertAfter(it, data);
   return true;
 }
 
-bool IntegerSetHTChain::search(int data) const {
+bool ece309::IntegerSetHTChain::search(int data) const {
   List::iterator it = table[hash(data)].begin();
   while (!it.end()) {
     if (it.getItem() == data)
@@ -72,7 +72,7 @@ bool IntegerSetHTChain::search(int data) const {
   return false;
 }
 
-void IntegerSetHTChain::remove(int data) {
+void ece309::IntegerSetHTChain::remove(int data) {
   List::iterator prev, it = table[hash(data)].begin();
   while (!it.end()) {
     if (it.getItem() == data) {
