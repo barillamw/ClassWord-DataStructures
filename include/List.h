@@ -5,6 +5,9 @@
 
 using Item = int;
 
+namespace ece309
+{
+
 class List {
 private:
 
@@ -68,5 +71,6 @@ public:
   void removeAfter(iterator it); // pseudocode in zyBook 2.4
   void insertAfter(iterator it, int item);
 };
+}
 
 #endif //LIST_H
