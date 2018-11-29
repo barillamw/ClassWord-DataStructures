@@ -2,7 +2,7 @@
 #include <string.h>
 #include "IntArray.h"
 
-IntArray::IntArray(const char* str)
+ece309::IntArray::IntArray(const char* str)
 {
   int count = 0;
   int i;
@@ -18,7 +18,7 @@ IntArray::IntArray(const char* str)
 
 }
 
-IntArray::IntArray(int s, int val)
+ece309::IntArray::IntArray(int s, int val)
 {
   int i;
   size = s;
@@ -30,12 +30,12 @@ IntArray::IntArray(int s, int val)
 
 }
 
-int& IntArray::operator[] (int index)
+int& ece309::IntArray::operator[] (int index)
 {
   return array[index];
 }
 
-IntArray& IntArray::operator+=(const IntArray &rhs)
+IntArray& ece309::IntArray::operator+=(const IntArray &rhs)
 {
   int i = 0;
 
@@ -48,7 +48,7 @@ IntArray& IntArray::operator+=(const IntArray &rhs)
   return *this;
 }
 
-IntArray IntArray::operator+(const IntArray &rhs) const
+IntArray ece309::IntArray::operator+(const IntArray &rhs) const
 {
   IntArray result(size); // make object to hold return value,
   	                       // make long enough to hold this object’s data
@@ -61,7 +61,7 @@ IntArray IntArray::operator+(const IntArray &rhs) const
     return result;
 }
 
-IntArray IntArray::operator- (const IntArray &rhs) const
+IntArray ece309::IntArray::operator- (const IntArray &rhs) const
 {
   IntArray result(size);
 
@@ -73,7 +73,7 @@ IntArray IntArray::operator- (const IntArray &rhs) const
   return result;
 }
 
-IntArray IntArray::operator*(int x) const
+IntArray ece309::IntArray::operator*(int x) const
 {
   IntArray result(size);
 
@@ -84,7 +84,7 @@ IntArray IntArray::operator*(int x) const
   return result;
 }
 
-IntArray IntArray::operator/(int x) const
+IntArray ece309::IntArray::operator/(int x) const
 {
   IntArray result(size);
 
@@ -95,7 +95,7 @@ IntArray IntArray::operator/(int x) const
   return result;
 }
 
-IntArray IntArray::operator<<(int count) const
+IntArray ece309::IntArray::operator<<(int count) const
 {
   IntArray result(size);
 
@@ -108,7 +108,7 @@ IntArray IntArray::operator<<(int count) const
 
 }
 
-IntArray::operator char*() const
+ece309::IntArray::operator char*() const
 {
   char* s = new char[size];
   int i = 0;
@@ -122,7 +122,7 @@ IntArray::operator char*() const
   return s;
 }
 
-IntArray::operator int() const
+ece309::IntArray::operator int() const
 {
   int sum = 0;
   int i = 0;
