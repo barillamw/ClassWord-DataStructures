@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
-
+namespace ece309
+{
 class Item {
 	public:
 		const char * str;
@@ -23,8 +24,9 @@ class Array {
 		const char * remove_front();
 
 };
+}
 
-Array::Array(int n) {
+ece309::Array::Array(int n) {
   // build an array of size n
   arraySize = n;
   arr = new const char *[arraySize];
@@ -36,10 +38,10 @@ Array::Array(int n) {
 	  arr[n] = itemNll;
   }
 }
-Array ::~Array(){
+ece309::Array ::~Array(){
 	delete arr; //frees the array
 }
-int Array::length(){
+int ece309::Array::length(){
 	int i = 0;
 	int count = 0;
 	const char * empty = "";
@@ -52,10 +54,10 @@ int Array::length(){
 
 	return count;
 }
-const char * Array::get(int n){
+const char * ece309::Array::get(int n){
 	return arr[n];
 }
-void Array::push_back(char* string){
+void ece309::Array::push_back(char* string){
 	int i = 0;
 	const char ** newArray;
 
@@ -80,7 +82,7 @@ void Array::push_back(char* string){
 	}
 	return;
 }
-const char * Array::remove_front(){
+const char * ece309::Array::remove_front(){
 	int i=0;
 	const char * tmp = "";
 
