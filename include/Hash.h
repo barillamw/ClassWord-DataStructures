@@ -3,6 +3,8 @@
 
 #include "List.h"
 
+namespace ece309
+{
 // IntegerSet abstract base class to demonstrate hash table concepts
 class IntegerSet {
 protected:
@@ -86,4 +88,5 @@ else {
 // Returning the key value.
 return key%size;
 }*/
+}
 #endif //HASH_H
