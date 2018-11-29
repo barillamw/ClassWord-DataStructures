@@ -1,13 +1,13 @@
 #include "DList.h"
 #include <stdio.h>
 
-DList::DList() {
+ece309::DList::DList() {
   // initialize empty list
   head = NULL;
   tail = NULL;
 }
 
-void DList::append(Item a) {
+void ece309::DList::append(Item a) {
   DListNode *node = new DListNode(a, NULL, tail);
   if (head == NULL) {
     // list is empty
@@ -19,7 +19,7 @@ void DList::append(Item a) {
   }
 }
 
-void DList::insertAfter(DList::iterator it, Item item) {
+void ece309::DList::insertAfter(ece309::DList::iterator it, Item item) {
   if (head == NULL || it.node == NULL) { // NULL iterator means insert at head
     DListNode *node = new DListNode(item, head); // next=head, prev=NULL
     if (head == NULL)                            // same as zyBook
