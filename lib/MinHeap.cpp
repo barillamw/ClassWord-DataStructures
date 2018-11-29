@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "MinHeap.h"
 
-void MinHeap::percolate_up(int index) {
+void ece309::MinHeap::percolate_up(int index) {
   while (index > 0) {
     int parent_index = (index - 1) / 2;
     if (heapArray[index] < heapArray[parent_index]) {
@@ -14,7 +14,7 @@ void MinHeap::percolate_up(int index) {
   }
 }
 
-void MinHeap::percolate_down(int index, int size) {
+void ece309::MinHeap::percolate_down(int index, int size) {
   int child_index = index * 2 + 1;
   int val = heapArray[index];
   while (child_index < size) {
@@ -35,7 +35,7 @@ void MinHeap::percolate_down(int index, int size) {
   }
 }
 
-bool MinHeap::insert(int data) {
+bool ece309::MinHeap::insert(int data) {
   if (nextIndex < heapArraySize) {
     heapArray[nextIndex] = data;
     percolate_up(nextIndex);
@@ -46,7 +46,7 @@ bool MinHeap::insert(int data) {
   }
 }
 
-bool MinHeap::remove(int &val) {
+bool ece309::MinHeap::remove(int &val) {
   if (nextIndex > 0) {
     val = heapArray[0];
     heapArray[0] = heapArray[nextIndex - 1];
@@ -57,7 +57,7 @@ bool MinHeap::remove(int &val) {
   return false;
 }
 
-void MinHeap::sort(int *array, int size) {
+void ece309::MinHeap::sort(int *array, int size) {
   MinHeap heap(array, size, size);
 
   printf("\nheapify: ");
