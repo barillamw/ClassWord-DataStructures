@@ -2,6 +2,8 @@
 #ifndef INTARRAY_H
 #define INTARRAY_H
 
+namespace ece309
+{
 class IntArray  {
 private:
   int* array;
@@ -45,6 +47,7 @@ IntArray& operator=(const IntArray &rhs) {
   int getLength() { return size; }
 
 };
+}
 
 
 
