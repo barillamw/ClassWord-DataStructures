@@ -5,7 +5,8 @@
 #include <string.h>
 #define  NONUM -3481057
 
-
+namespace ece309
+{
 class IntInf{
 public:
   bool neg_inf;
@@ -210,5 +211,5 @@ bool IntInf::operator< (const IntInf& rhs){
   else if (number < rhs.number) return true;
   else return false;
 }
-
+}
 #endif //INTINF_H
