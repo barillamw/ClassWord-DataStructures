@@ -1,5 +1,6 @@
 #include <stdio.h>
-
+namespace ece309
+{
 class Item {
 	public:
 		const char * str;
@@ -52,14 +53,15 @@ class List {
 		~List();
 		
 };
+}
 
-List::List() {
+ece309::List::List() {
   // start with an empty list
   head = NULL;
   tail = NULL;
 }
 
-bool List::remove(Item &copy) {
+bool ece309::List::remove(Item &copy) {
   if (!empty()) // if list is not empty
     {
       copy = head->getItem(); // return copy
@@ -73,7 +75,7 @@ bool List::remove(Item &copy) {
   return false; // nothing in list
 }
 
-void List::append(Item a) {
+void ece309::List::append(Item a) {
   ListNode *node = new ListNode(a);
   if (head == NULL)
     {
@@ -88,17 +90,17 @@ void List::append(Item a) {
     }
 }
 
-bool List::empty() {
+bool ece309::List::empty() {
   return head==NULL;
 }
 
-void List::push_back(char * string) {
+void ece309::List::push_back(char * string) {
 	//Add a string to the tail of a list
 	Item *newItem = new Item(string);
 	append(*newItem);
 }
 
-Item List::get(int n){
+Item ece309::List::get(int n){
 	//Return a copy of the n-th item in the list.
 	int i = 0;
 	ListNode *tmp = head;
@@ -111,7 +113,7 @@ Item List::get(int n){
 	
 }
 
-int List::length(){
+int ece309::List::length(){
 	//Get the number of items in the list.
 	int i = 0;
 	ListNode *tmp = head;
@@ -123,14 +125,14 @@ int List::length(){
 	return i;
 }
 
-Item List::remove_front(){
+Item ece309::List::remove_front(){
 	//Remove the head of the list and return a copy of the data that was removed.
 	Item copy(NULL);
 	remove(copy);
 	return copy;
 }
 
-List::~List() {
+ece309::List::~List() {
 	// Free all of the ListNodes in the listItem t;
 	Item t(NULL);
 	while(!empty()) {//while not empty
