@@ -2,6 +2,8 @@
 
 #ifndef INTEGERSETARRAY_H
 #define INTEGERSETARRAY_H
+namespace ece309
+{
 class IntegerSet {
 protected:
    int size;
@@ -23,4 +25,5 @@ public:
   bool search(int x) const;
   void remove(int x);
 };
+}
 #endif //INTEGERSETARRAY_H
