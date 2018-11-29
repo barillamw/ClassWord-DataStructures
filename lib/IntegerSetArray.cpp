@@ -4,7 +4,7 @@
 
 
 
-IntegerSetArray::IntegerSetArray(int s){
+ece309::IntegerSetArray::IntegerSetArray(int s){
   int i;
 
   setArray = new int[s] ;
@@ -14,7 +14,7 @@ IntegerSetArray::IntegerSetArray(int s){
   }
 }
 
-bool IntegerSetArray::insert(int x){
+bool ece309::IntegerSetArray::insert(int x){
   int i;
   for (i=0; i<size;i++){
     if(setArray[i] == EMPTY ){
@@ -25,7 +25,7 @@ bool IntegerSetArray::insert(int x){
   return false;
 }
 
-bool IntegerSetArray::search(int x) const {
+bool ece309::IntegerSetArray::search(int x) const {
   int i;
   for (i=0; i<size; i++){
     if(setArray[i] == x){
@@ -35,7 +35,7 @@ bool IntegerSetArray::search(int x) const {
   return false;
 }
 
-void IntegerSetArray::remove(int x){
+void ece309::IntegerSetArray::remove(int x){
   int i;
 
   for (i=0; i<size; i++){
