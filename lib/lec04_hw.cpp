@@ -2,36 +2,36 @@
 #include <poly.h>
 
 //declarations of the virtual functions
-StrItem::StrItem(const char *s) {str = s;}
-void StrItem::print(){printf("Item: %s\n", str);}
-IntItem::IntItem(int n) {num = n;}
-void IntItem::print(){printf("Item: %d\n", num);}
-DblItem::DblItem(double d) {dbl = d;}
-void DblItem::print(){printf("Item: %f\n",dbl);}
+ece309::StrItem::StrItem(const char *s) {str = s;}
+void ece309::StrItem::print(){printf("Item: %s\n", str);}
+ece309::IntItem::IntItem(int n) {num = n;}
+void ece309::IntItem::print(){printf("Item: %d\n", num);}
+ece309::DblItem::DblItem(double d) {dbl = d;}
+void ece309::DblItem::print(){printf("Item: %f\n",dbl);}
 
-ListNode::ListNode(Object* a, ListNode *n){
+ece309::ListNode::ListNode(Object* a, ListNode *n){
   item = a;
   next = n;
 }
-ListNode* ListNode::getNext(){return next;}
-void ListNode::setNext(ListNode *n){next = n;}
-Object* ListNode::getItem(){return item;}
+ListNode* ece309::ListNode::getNext(){return next;}
+void ece309::ListNode::setNext(ListNode *n){next = n;}
+Object* ece309::ListNode::getItem(){return item;}
 
-iterator::iterator(ListNode* n) { node = n; }
-Object* iterator::getItem() { return node->getItem(); }
-void iterator::increment() { node = node->next; }
-bool iterator::end() {  return node==NULL; }
+ece309::iterator::iterator(ListNode* n) { node = n; }
+Object* ece309::iterator::getItem() { return node->getItem(); }
+void ece309::iterator::increment() { node = node->next; }
+bool ece309::iterator::end() {  return node==NULL; }
 
 
-iterator pList::begin() { return iterator(head); }
+iterator ece309::pList::begin() { return iterator(head); }
 
-pList::pList(){
+ece309::pList::pList(){
   // start with an empty list
   head = NULL;
   tail = NULL;
 }
 
-void pList::append(Object* a){
+void ece309::pList::append(Object* a){
   ListNode *node = new ListNode(a);
   if (head == NULL)
     {
@@ -46,7 +46,7 @@ void pList::append(Object* a){
     }
 }
 
-bool pList::remove(Object* copy){
+bool ece309::pList::remove(Object* copy){
   if (!empty()) // if list is not empty
     {
       copy = head->getItem(); // return copy
@@ -60,11 +60,11 @@ bool pList::remove(Object* copy){
   return false; // nothing in list
 }
 
-bool pList::empty(){
+bool ece309::pList::empty(){
   return head==NULL;
 }
 
-void pList::insertAfter(iterator it, Object* item){ // pseudocode in zyBook 2.3
+void ece309::pList::insertAfter(iterator it, Object* item){ // pseudocode in zyBook 2.3
     if (it.node==NULL)
       { // special case to insert at the head
 	// point new node at current head of list
@@ -84,7 +84,7 @@ void pList::insertAfter(iterator it, Object* item){ // pseudocode in zyBook 2.3
       }
 }
 
-void pList::removeAfter(iterator it){ // pseudocode in zyBook 2.4
+void ece309::pList::removeAfter(iterator it){ // pseudocode in zyBook 2.4
    if (it.node==NULL) // special case to remove head, it’s not after any node
      {
        ListNode *remove = head;               // will remove the head
