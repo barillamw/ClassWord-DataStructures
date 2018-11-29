@@ -1,13 +1,13 @@
 #include "List.h"
 
-List::List()
+ece309::List::List()
 {
   // start with an empty list
   head = NULL;
   tail = NULL;
 }
 
-void List::append(Item a)
+void ece309::List::append(Item a)
 {
   ListNode *node = new ListNode(a);
   if (head == NULL)
@@ -23,7 +23,7 @@ void List::append(Item a)
     }
 }
 
-bool List::remove(Item &copy)
+bool ece309::List::remove(Item &copy)
 {
   if (!empty()) // if list is not empty
     {
@@ -38,12 +38,12 @@ bool List::remove(Item &copy)
   return false; // nothing in list
 }
 
-bool List::empty()
+bool ece309::List::empty()
 {
   return head==NULL;
 }
 
-void List::insertAfter(List::iterator it, Item item) // pseudocode in zyBook 2.3
+void ece309::List::insertAfter(List::iterator it, Item item) // pseudocode in zyBook 2.3
 {
     if (it.node==NULL)
       { // special case to insert at the head
@@ -64,7 +64,7 @@ void List::insertAfter(List::iterator it, Item item) // pseudocode in zyBook 2.3
       }
 }
 
-void List::removeAfter(List::iterator it) // pseudocode in zyBook 2.4
+void ece309::List::removeAfter(List::iterator it) // pseudocode in zyBook 2.4
 {
    if (it.node==NULL) // special case to remove head, it’s not after any node
      {
