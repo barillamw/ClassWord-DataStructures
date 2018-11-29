@@ -3,6 +3,8 @@
 #ifndef poly_h
 #define poly_h
 
+namespace ece309
+{
 class Object {
 public:
   virtual void print()=0;
@@ -79,6 +81,6 @@ class pList {
     void insertAfter(iterator it, Object* item);
   };
 
-
+}
 
 #endif
