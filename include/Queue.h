@@ -3,6 +3,8 @@
 
 #include "List.h"
 
+namespace ece309
+{
 class Queue {
 private:
   List list;
@@ -14,5 +16,5 @@ public:
   Item& peek();
   bool empty();
 };
-
+}
 #endif //QUEUE_H
