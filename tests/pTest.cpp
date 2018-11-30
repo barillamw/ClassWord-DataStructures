@@ -6,17 +6,17 @@ int main()
 {
   //declaration of variables and formation of the list
   ece309::pList l;
-  ece309::IntItem *one = new IntItem(7);
+  ece309::IntItem *one = new ece309::IntItem(7);
   l.append(one);
-  ece309::Object *two = new StrItem("This is a string");
+  ece309::Object *two = new ece309::StrItem("This is a string");
   l.append(two);
-  ece309::Object *three = new DblItem(2.0);
+  ece309::Object *three = new ece309::DblItem(2.0);
   l.append(three);
 
   ece309::iterator it = l.begin();
   while(!it.end())
     {
-      Object* copy = it.getItem();
+      ece309::Object* copy = it.getItem();
 
       copy ->print();
 
