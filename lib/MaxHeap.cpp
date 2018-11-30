@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-class ece309::MaxHeap {
+namespace ece309
+{
+class MaxHeap {
 private:
   int *heapArray;    // this is the maxheap
   int heapArraySize; // size of the array
@@ -44,7 +45,7 @@ public:
   static void sort(int *array, int size);
 };
 
-void ece309::MaxHeap::percolate_up(int index) {
+void MaxHeap::percolate_up(int index) {
   while (index > 0) {
     int parent_index = (index - 1) / 2;
     if (heapArray[index] > heapArray[parent_index]) {
@@ -57,7 +58,7 @@ void ece309::MaxHeap::percolate_up(int index) {
   }
 }
 
-void ece309::MaxHeap::percolate_down(int index, int size) {
+void MaxHeap::percolate_down(int index, int size) {
   int child_index = index * 2 + 1;
   int val = heapArray[index];
   while (child_index < size) {
@@ -78,7 +79,7 @@ void ece309::MaxHeap::percolate_down(int index, int size) {
   }
 }
 
-bool ece309::MaxHeap::insert(int data) {
+bool MaxHeap::insert(int data) {
   if (nextIndex < heapArraySize) {
     heapArray[nextIndex] = data;
     percolate_up(nextIndex);
@@ -89,7 +90,7 @@ bool ece309::MaxHeap::insert(int data) {
   }
 }
 
-bool ece309::MaxHeap::remove(int &val) {
+bool MaxHeap::remove(int &val) {
   if (nextIndex > 0) {
     val = heapArray[0];
     heapArray[0] = heapArray[nextIndex - 1];
@@ -100,7 +101,7 @@ bool ece309::MaxHeap::remove(int &val) {
   return false;
 }
 
-void ece309::MaxHeap::sort(int *array, int size) {
+void MaxHeap::sort(int *array, int size) {
   MaxHeap heap(array, size, size);
 
   printf("\nheapify: ");
