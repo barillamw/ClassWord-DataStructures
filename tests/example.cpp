@@ -3,6 +3,6 @@
 
 int main()
 {
-  example();
+  ece309::example();
   return 0;
 }
