@@ -6,7 +6,7 @@
 #include <climits>
 #include <stdio.h>
 
-bool doesPathExist(Graph &g, int *path, int length) {
+bool doesPathExist(ece309::Graph &g, int *path, int length) {
   for (int i = 0; i < length - 1; i++) {
     if (!g.isAdjacent(path[i], path[i + 1]))
       return false;
@@ -16,16 +16,16 @@ bool doesPathExist(Graph &g, int *path, int length) {
 
 void visit(int node) { printf("%d ", node); }
 
-void BreadthFirstSearch(Graph &graph, int start) {
-  IntegerSetHT discovered(1000);
-  Queue frontier;
+void BreadthFirstSearch(ece309::Graph &graph, int start) {
+  ece309::IntegerSetHT discovered(1000);
+  ece309::Queue frontier;
   frontier.push(start);
   discovered.insert(start);
   while (!frontier.empty()) {
     int node = frontier.peek();
     visit(node);
-    List adjList = graph.getAdjacencyList(node);
-    List::iterator it = adjList.begin();
+    ece309::List adjList = graph.getAdjacencyList(node);
+    ece309::List::iterator it = adjList.begin();
     while (!it.end()) {
       int j = it.getItem();
       if (!discovered.search(j)) {
@@ -38,27 +38,27 @@ void BreadthFirstSearch(Graph &graph, int start) {
   }
 }
 
-void DepthFirstSearch_helper(Graph &g, IntegerSet &visitedSet, int node) {
+void DepthFirstSearch_helper(ece309::Graph &g, ece309::IntegerSet &visitedSet, int node) {
   if (!visitedSet.search(node)) {
     visit(node); // take action upon visit to node
     visitedSet.insert(node);
-    List adjList = g.getAdjacencyList(node);
+    ece309::List adjList = g.getAdjacencyList(node);
     for (List::iterator it = adjList.begin(); !it.end(); it.increment())
       DepthFirstSearch_helper(g, visitedSet, it.getItem());
   }
 }
 
 void DepthFirstSearch(Graph &g, int node) {
-  IntegerSetHT ht(1000);
-  DepthFirstSearch_helper(g, ht, node);
+  ece309::IntegerSetHT ht(1000);
+  ece309::DepthFirstSearch_helper(g, ht, node);
 }
 
-void WeightedDenseGraph::addWeight(int from, int to, int weight) {
+void ece309::WeightedDenseGraph::addWeight(int from, int to, int weight) {
   weights[from * numNodes + to] = weight;
   weights[to * numNodes + from] = weight;
 }
 
-void WeightedDenseGraph::addEdge(int from, int to, int weight) {
+void ece309::WeightedDenseGraph::addEdge(int from, int to, int weight) {
   addEdge(from, to);
   addWeight(from, to, weight);
 }
@@ -79,7 +79,7 @@ node_helper *ShortestPath(Graph &g, int startV) {
   node_helper *nodesH = new node_helper[numNodes];
 
   nodesH[startV].distance = 0;
-  MinHeap unvisitedHeap;
+  ece309::MinHeap unvisitedHeap;
   for (int i = 0; i < numNodes; i++){
     unvisitedHeap.insert(i);
   }
@@ -109,14 +109,14 @@ node_helper *ShortestPathOrig(Graph &g, int startV) {
   node_helper *nodesH = new node_helper[numNodes];
 
   nodesH[startV].distance = 0;
-  DList unvisitedQueue;
+  ece309::DList unvisitedQueue;
   for (int i = 0; i < numNodes; i++)
     unvisitedQueue.append(i);
 
   while (!unvisitedQueue.empty()) {
-    DList::iterator it = unvisitedQueue.begin();
+    ece309::DList::iterator it = unvisitedQueue.begin();
     int min_node = it.getItem();
-    DList::iterator min = it; // remember iterator to minimum
+    ece309::DList::iterator min = it; // remember iterator to minimum
     int min_distance = nodesH[min_node].distance;
 
     while (!it.end()) {
@@ -131,7 +131,7 @@ node_helper *ShortestPathOrig(Graph &g, int startV) {
     int currentV = min_node;
     unvisitedQueue.erase(min); // remove min from queue
 
-    List adjList = g.getAdjacencyList(currentV);
+    ece309::List adjList = g.getAdjacencyList(currentV);
     for (List::iterator lit = adjList.begin(); !lit.end(); lit.increment()) {
       int toNode = lit.getItem();
       if (g.getWeight(currentV, toNode) + min_distance <
@@ -149,7 +149,7 @@ node_helper *ShortestPathOrig(Graph &g, int startV) {
 
 int main() {
 
-  SparseGraph g(14);
+  ece309::SparseGraph g(14);
 
   g.addEdge(0, 1);
   g.addEdge(0, 2);
@@ -184,7 +184,7 @@ int main() {
   printf("\nDFS(13): ");
   DepthFirstSearch(g, 13);
 
-  WeightedDenseGraph wg(6);
+ ece309:: WeightedDenseGraph wg(6);
   wg.addEdge(0, 1, 450);
   wg.addEdge(0, 3, 150);
   wg.addEdge(0, 2, 370);
