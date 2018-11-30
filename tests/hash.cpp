@@ -7,7 +7,7 @@ int collision = 0;
 int fails = 0;
 
 // can only hold positive integers
-IntegerSetHT::IntegerSetHT(int htsize)
+ece309::IntegerSetHT::IntegerSetHT(int htsize)
 :IntegerSet(htsize)
 {
   collision = 0;
@@ -18,7 +18,7 @@ IntegerSetHT::IntegerSetHT(int htsize)
       table[i] = empty_since_start;  // -1 means empty
 }
 
-bool IntegerSetHT::insert(int data)
+bool ece309::IntegerSetHT::insert(int data)
 {
   //printf("insert started\n");
   int index = hash(data);
@@ -48,7 +48,7 @@ bool IntegerSetHT::insert(int data)
    return false;
 }
 
-bool IntegerSetHT::search(int data) const
+bool ece309::IntegerSetHT::search(int data) const
 {
   int index = hash(data);
   int bucketsProbed = 0;
@@ -66,7 +66,7 @@ bool IntegerSetHT::search(int data) const
   return false;
 }
 
-void IntegerSetHT::remove(int data)
+void ece309::IntegerSetHT::remove(int data)
 {
   int index = hash(data);
   int bucketsProbed = 0;
@@ -82,20 +82,20 @@ void IntegerSetHT::remove(int data)
   }
 }
 
-IntegerSetHTChain::IntegerSetHTChain(int htsize)
+ece309::IntegerSetHTChain::IntegerSetHTChain(int htsize)
 :IntegerSet(htsize)
 {
   table = new List[size];
 }
 
-bool IntegerSetHTChain::insert(int data)
+bool ece309::IntegerSetHTChain::insert(int data)
 {
   List::iterator it;
   table[hash(data)].insertAfter(it,data);
   return true;
 }
 
-bool IntegerSetHTChain::search(int data) const
+bool ece309::IntegerSetHTChain::search(int data) const
 {
    List::iterator it = table[hash(data)].begin();
    while(!it.end())
@@ -107,7 +107,7 @@ bool IntegerSetHTChain::search(int data) const
    return false;
 }
 
-void IntegerSetHTChain::remove(int data)
+void ece309::IntegerSetHTChain::remove(int data)
 {
    List::iterator prev,it = table[hash(data)].begin();
    while(!it.end())
@@ -124,12 +124,12 @@ void IntegerSetHTChain::remove(int data)
 
 int main()
 {
-  IntegerSetHT set(1000);
+  ece309::IntegerSetHT set(1000);
   int r;
   int i;
   srand(time(NULL));
 
-  IntegerSetHT set2;
+  ece309::IntegerSetHT set2;
   set2.insert(5);
   set2.insert(99);
   set2.insert(0);
@@ -145,7 +145,7 @@ int main()
 
   printf("Collisions: %d\nFails: %d\n",collision, fails);
 
-  IntegerSetHT::iterator sit = set2.begin();
+  ece309::IntegerSetHT::iterator sit = set2.begin();
 while(!sit.end())
 {
    printf("%d\n", sit.getInt());
