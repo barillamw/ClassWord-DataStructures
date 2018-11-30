@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+namespace ece309{
 class MaxHeap {
 private:
   int *heapArray;    // this is the maxheap
@@ -151,6 +151,7 @@ void MaxHeap::topthree(int &gold, int &silver, int &bronze) const{
   }
   return;
 }
+}
 
 int main() {
 
@@ -166,7 +167,7 @@ int main() {
     printf("%d ", array[i]);
   }*/
 
-    MaxHeap heap;
+    ece309::MaxHeap heap;
     int first;
     int second;
     int third;
