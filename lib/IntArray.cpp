@@ -35,7 +35,7 @@ int& ece309::IntArray::operator[] (int index)
   return array[index];
 }
 
-IntArray& ece309::IntArray::operator+=(const IntArray &rhs)
+ece309::IntArray& ece309::IntArray::operator+=(const IntArray &rhs)
 {
   int i = 0;
 
@@ -48,7 +48,7 @@ IntArray& ece309::IntArray::operator+=(const IntArray &rhs)
   return *this;
 }
 
-IntArray ece309::IntArray::operator+(const IntArray &rhs) const
+ece309::IntArray ece309::IntArray::operator+(const IntArray &rhs) const
 {
   IntArray result(size); // make object to hold return value,
   	                       // make long enough to hold this object’s data
@@ -61,7 +61,7 @@ IntArray ece309::IntArray::operator+(const IntArray &rhs) const
     return result;
 }
 
-IntArray ece309::IntArray::operator- (const IntArray &rhs) const
+ece309::IntArray ece309::IntArray::operator- (const IntArray &rhs) const
 {
   IntArray result(size);
 
@@ -73,7 +73,7 @@ IntArray ece309::IntArray::operator- (const IntArray &rhs) const
   return result;
 }
 
-IntArray ece309::IntArray::operator*(int x) const
+ece309::IntArray ece309::IntArray::operator*(int x) const
 {
   IntArray result(size);
 
@@ -84,7 +84,7 @@ IntArray ece309::IntArray::operator*(int x) const
   return result;
 }
 
-IntArray ece309::IntArray::operator/(int x) const
+ece309::IntArray ece309::IntArray::operator/(int x) const
 {
   IntArray result(size);
 
@@ -95,7 +95,7 @@ IntArray ece309::IntArray::operator/(int x) const
   return result;
 }
 
-IntArray ece309::IntArray::operator<<(int count) const
+ece309::IntArray ece309::IntArray::operator<<(int count) const
 {
   IntArray result(size);
 
