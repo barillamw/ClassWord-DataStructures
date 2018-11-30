@@ -40,7 +40,7 @@ void ece309::DList::insertAfter(ece309::DList::iterator it, Item item) {
   }
 }
 
-void DList::erase(DList::iterator it) {
+void ece309::DList::erase(DList::iterator it) {
   DListNode *succ = it.node->next; // successor node
   DListNode *pred = it.node->prev; // predecessor node
 
