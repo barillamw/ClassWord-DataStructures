@@ -7,7 +7,7 @@ int main() {
   int testFailCnt = 0;
 
   // test ascii constructor
-  IntArray ascii("AB");
+  ece309::IntArray ascii("AB");
   if (ascii.get(0) == 65 && ascii.get(1) == 66) {
     testPassCnt++;
   } else {
@@ -28,7 +28,7 @@ int main() {
 
   // test (length,val) constructor
   // generate lhs = {6, 6, 6}
-  IntArray lhs(3, 6);
+  ece309::IntArray lhs(3, 6);
   if (lhs.get(0) == 6 && lhs.get(1) == 6 && lhs.get(2) == 6) {
     testPassCnt++;
   } else {
@@ -38,7 +38,7 @@ int main() {
   }
 
   // test operator+=(const IntArray &rhs)
-  IntArray rhs(4, 1);
+  ece309::IntArray rhs(4, 1);
   // resulting lhs = {6,6,6} + {1,1,1,1} = {7,7,7}
   lhs += rhs;
   if (lhs.get(0) == 7 && lhs.get(1) == 7 && lhs.get(2) == 7 &&
@@ -53,9 +53,9 @@ int main() {
 
   // test IntArray operator+(const IntArray &rhs) const
   // reuslting sum = {6,6,6} + {1,1,1} = {7,7,7}
-  IntArray nlhs(3, 6);
-  IntArray nrhs(3, 1);
-  IntArray sum = nlhs + nrhs;
+  ece309::IntArray nlhs(3, 6);
+  ece309::IntArray nrhs(3, 1);
+  ece309::IntArray sum = nlhs + nrhs;
   if (sum.get(0) == 7 && sum.get(1) == 7 && sum.get(2) == 7) {
     testPassCnt++;
   } else {
@@ -66,7 +66,7 @@ int main() {
 
   // test IntArray operator-(const IntArray &rhs) const
   // reuslting sub = {6,6,6} - {1,1,1} = {5,5,5}
-  IntArray sub = nlhs - nrhs;
+  ece309::IntArray sub = nlhs - nrhs;
   if (sub.get(0) == 5 && sub.get(1) == 5 && sub.get(2) == 5) {
     testPassCnt++;
   } else {
@@ -77,8 +77,8 @@ int main() {
 
   // test IntArray operator*(int x) const;
   // reuslting multi = {4,4,4} * 2 = {8,8,8}
-  IntArray base(3, 4);
-  IntArray multi = base * 2;
+  ece309::IntArray base(3, 4);
+  ece309::IntArray multi = base * 2;
   if (multi.get(0) == 8 && multi.get(1) == 8 && multi.get(2) == 8) {
     testPassCnt++;
   } else {
@@ -89,7 +89,7 @@ int main() {
 
   // test IntArray operator/(int x) const;
   // reuslting div = {4,4,4} / 2 = {2,2,2}
-  IntArray div = base / 2;
+  ece309::IntArray div = base / 2;
   if (div.get(0) == 2 && div.get(1) == 2 && div.get(2) == 2) {
     testPassCnt++;
   } else {
@@ -103,7 +103,7 @@ int main() {
   base.set(0, 1);
   base.set(1, 2);
   base.set(2, 3);
-  IntArray rot = base << 1;
+  ece309::IntArray rot = base << 1;
   if (rot.get(0) == 3 && rot.get(1) == 1 && rot.get(2) == 2) {
     testPassCnt++;
   } else {
@@ -128,7 +128,7 @@ int main() {
 
   // test operator int() const;
   // resulting avg = int({1,4}) = 2.5
-  IntArray nbase(2, 1);
+  ece309::IntArray nbase(2, 1);
   nbase.set(1, 4);
   int avg = int(nbase);
   if (avg == 2) {
