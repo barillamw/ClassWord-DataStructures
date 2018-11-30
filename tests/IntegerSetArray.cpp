@@ -7,7 +7,7 @@ int main()
     int testFailCnt = 0;
 
     printf("constructing an integer set of size 3 ...\n");
-    IntegerSetArray isa(3);
+    ece309::IntegerSetArray isa(3);
 
     for (int i=0;i<4;i++)
     {
