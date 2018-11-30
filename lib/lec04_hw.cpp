@@ -13,17 +13,17 @@ ece309::ListNode::ListNode(Object* a, ListNode *n){
   item = a;
   next = n;
 }
-ListNode* ece309::ListNode::getNext(){return next;}
+ece309::ListNode* ece309::ListNode::getNext(){return next;}
 void ece309::ListNode::setNext(ListNode *n){next = n;}
-Object* ece309::ListNode::getItem(){return item;}
+ece309::Object* ece309::ListNode::getItem(){return item;}
 
 ece309::iterator::iterator(ListNode* n) { node = n; }
-Object* ece309::iterator::getItem() { return node->getItem(); }
+ece309::Object* ece309::iterator::getItem() { return node->getItem(); }
 void ece309::iterator::increment() { node = node->next; }
 bool ece309::iterator::end() {  return node==NULL; }
 
 
-iterator ece309::pList::begin() { return iterator(head); }
+ece309::iterator ece309::pList::begin() { return iterator(head); }
 
 ece309::pList::pList(){
   // start with an empty list
