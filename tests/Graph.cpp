@@ -43,14 +43,14 @@ void DepthFirstSearch_helper(ece309::Graph &g, ece309::IntegerSet &visitedSet, i
     visit(node); // take action upon visit to node
     visitedSet.insert(node);
     ece309::List adjList = g.getAdjacencyList(node);
-    for (List::iterator it = adjList.begin(); !it.end(); it.increment())
+    for (ece309::List::iterator it = adjList.begin(); !it.end(); it.increment())
       DepthFirstSearch_helper(g, visitedSet, it.getItem());
   }
 }
 
-void DepthFirstSearch(Graph &g, int node) {
+void DepthFirstSearch(ece309::Graph &g, int node) {
   ece309::IntegerSetHT ht(1000);
-  ece309::DepthFirstSearch_helper(g, ht, node);
+  DepthFirstSearch_helper(g, ht, node);
 }
 
 void ece309::WeightedDenseGraph::addWeight(int from, int to, int weight) {
@@ -73,7 +73,7 @@ public:
   int pred;
 };
 
-node_helper *ShortestPath(Graph &g, int startV) {
+node_helper *ShortestPath(ece309::Graph &g, int startV) {
 
   int numNodes = g.getNumNodes();
   node_helper *nodesH = new node_helper[numNodes];
@@ -90,8 +90,8 @@ node_helper *ShortestPath(Graph &g, int startV) {
     unvisitedHeap.remove(currentV);
     int min_distance = nodesH[currentV].distance;
 
-    List adjList = g.getAdjacencyList(currentV);
-    for (List::iterator lit = adjList.begin(); !lit.end(); lit.increment()) {
+    ece309::List adjList = g.getAdjacencyList(currentV);
+    for (ece309::List::iterator lit = adjList.begin(); !lit.end(); lit.increment()) {
       int toNode = lit.getItem();
       if (g.getWeight(currentV, toNode) + min_distance <
           nodesH[toNode].distance) {
@@ -103,7 +103,7 @@ node_helper *ShortestPath(Graph &g, int startV) {
   return nodesH;
 }
 
-node_helper *ShortestPathOrig(Graph &g, int startV) {
+node_helper *ShortestPathOrig(ece309::Graph &g, int startV) {
 
   int numNodes = g.getNumNodes();
   node_helper *nodesH = new node_helper[numNodes];
@@ -132,7 +132,7 @@ node_helper *ShortestPathOrig(Graph &g, int startV) {
     unvisitedQueue.erase(min); // remove min from queue
 
     ece309::List adjList = g.getAdjacencyList(currentV);
-    for (List::iterator lit = adjList.begin(); !lit.end(); lit.increment()) {
+    for (ece309::List::iterator lit = adjList.begin(); !lit.end(); lit.increment()) {
       int toNode = lit.getItem();
       if (g.getWeight(currentV, toNode) + min_distance <
           nodesH[toNode].distance) {
