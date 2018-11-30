@@ -117,3 +117,4 @@ void MaxHeap::sort(int *array, int size) {
 
   // return, and the array passed in is sorted
 }
+}
