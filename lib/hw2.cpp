@@ -100,7 +100,7 @@ void ece309::List::push_back(char * string) {
 	append(*newItem);
 }
 
-Item ece309::List::get(int n){
+ece309::Item ece309::List::get(int n){
 	//Return a copy of the n-th item in the list.
 	int i = 0;
 	ListNode *tmp = head;
@@ -125,7 +125,7 @@ int ece309::List::length(){
 	return i;
 }
 
-Item ece309::List::remove_front(){
+ece309::Item ece309::List::remove_front(){
 	//Remove the head of the list and return a copy of the data that was removed.
 	Item copy(NULL);
 	remove(copy);
