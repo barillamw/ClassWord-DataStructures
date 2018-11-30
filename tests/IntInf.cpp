@@ -5,11 +5,11 @@
 int main(){
   char const *pINF = "+infinity";
   char const *nINF = "-infinity";
-  IntInf num1(1);
-  IntInf num2(pINF);
-  IntInf num3(nINF);
-  IntInf num4;
-  IntInf num0(0);
+  ece309::IntInf num1(1);
+  ece309::IntInf num2(pINF);
+  ece309::IntInf num3(nINF);
+  ece309::IntInf num4;
+  ece309::IntInf num0(0);
   int count = 0;
 
   //test operator=
